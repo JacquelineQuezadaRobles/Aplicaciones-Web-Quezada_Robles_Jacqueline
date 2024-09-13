@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi tienda en línea</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al stylsheet de la página -->
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="assets/imagenes/encabezado1.jpg" alt="encabezado1"></div>
+            <div class="slide"><img src="assets/imagenes/encabezado2.png" alt="encabezado2"></div>
+            <div class="slide"><img src="assets/imagenes/encabezado3.jpeg" alt="encabezado3"></div>
+
+        </div>
+    </div>
+
+    <!-- Sección del catálogo -->
+    <section id="catalogo">
+        <h1>Catálogo de productos</h1>
+        <div class="productos">
+            <div class="producto">
+             <img src="assets/imagenes/airtag.png" alt="airtag" width="300" height="200">
+                <h3>Airtag</h3>
+                <p>Precio: $100</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="assets/imagenes/airpods4.jpg" alt="airtag" width="300" height="200">
+                <h3>Airpods 4</h3>
+                <p>Precio: $200</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="assets/imagenes/apple watch series10.jpeg" alt="apple watch series10" width="300" height="200">
+                <h3>Apple watch Series 10</h3>
+                <p>Precio: $300</p>
+                <button>Comprar</button>
+            </div>
+            <div class="producto"></div>
+                <img src="assets/imagenes/iphone 16 pro.jpeg" alt="Iphone 16 pro" width="250" height="200">
+                <h3>Iphone 16 pro</h3>
+                <p>Precio: $26000</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Formulario de contacto -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form action="#" method="post">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Comentarios</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
+</body>
+</html>
+
