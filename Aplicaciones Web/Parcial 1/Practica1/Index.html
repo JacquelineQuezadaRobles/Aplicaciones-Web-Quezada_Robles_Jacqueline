@@ -1,190 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Cabecera del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Room</title>
+    <title>Tecnology Center</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilos básicos para centrar los juegos */
-        .juegos-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .juego {
-            text-align: center;
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 250px;
-        }
-
-        .slider {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        .slider img {
-            width: 100%;
-        }
-
-        .container {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 <body>
-    <!-- Imagen de cabecera -->
-    <div class="container">
-        <ul class="slider">
-          <li id="slide1">
-            <img src="assets/imagenes/1.jpg" alt="fondo numero 1" width="800" height="800">
-          </li>
-          <li id="slide2">
-            <img src="assets/imagenes/2.jpg" alt="fondo numero 2" width="800" height="800">
-          </li>
-          <li id="slide3">
-            <img src="assets/imagenes/3.jpg" alt="fondo numero 3" width="800" height="800">
-          </li>
-        </ul>
-    </div>
-
-    <!-- Script para el slider -->
-    <script>
-        const slider = document.querySelector('.slider');
-        const slides = document.querySelectorAll('.slider li');
-        let currentSlide = 0;
-        const totalSlides = slides.length;
-        const slideWidth = slides[0].clientWidth;
-        const intervalTime = 3000; // Tiempo entre cada imagen
-        let slideInterval;
-
-        function autoSlide() {
-            currentSlide++;
-            if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            }
-            moveSlider();
-        }
-
-        function moveSlider() {
-            slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-            slider.style.transition = 'transform 0.5s ease';
-        }
-
-        slideInterval = setInterval(autoSlide, intervalTime);
-
-        // Reiniciar el slider si se usa manualmente
-        const menuLinks = document.querySelectorAll('.menu a');
-        menuLinks.forEach((link, index) => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                currentSlide = index;
-                moveSlider();
-                clearInterval(slideInterval); 
-                slideInterval = setInterval(autoSlide, intervalTime); 
-            });
-        });
-    </script>
-
     <!-- Barra de navegación -->
     <nav>
         <ul>
-            <li><a href="#Inicio">Inicio</a></li>
-            <li><a href="#Catalogo">Catálogo</a></li>
-            <li><a href="#Contacto">Contacto</a></li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
     </nav>
 
-    <!-- Sección principal -->
-    <section id="inicio">
-        <h1>Bienvenidos a Game Room</h1>
-        <p>Esta página está diseñada para conocer mejor sobre videojuegos y temáticas.</p>
-    </section>
+    <!-- Slider -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide"><img src="assets/imagenes/encabezado1.jpg" alt="encabezado1"></div>
+            <div class="slide"><img src="assets/imagenes/encabezado2.png" alt="encabezado2"></div>
+            <div class="slide"><img src="assets/imagenes/encabezado3.jpeg" alt="encabezado3"></div>
+        </div>
+    </div>
 
-    <!-- Sección de catálogo de juegos -->
-    <section id="Catalogo">
-        <h2>Catálogo de Juegos</h2>
-
-        <!-- Contenedor para los juegos -->
-        <div class="juegos-container">
-            <!-- Resident Evil -->
-            <div class="juego">
-                <h3>Resident Evil 6 </h3>
-                <p>Precio: $350.00</p>
-                <img src="assets/imagenes/RE6.jpeg" alt="Resident Evil 3 Remake" width="300" height="300">
-                <button type="button" class="comprar-btn">Comprar</button>
+    <!-- Sección del catálogo -->
+    <section id="catalogo">
+        <h1>Catálogo de productos</h1>
+        <div class="productos">
+            <div class="producto">
+                <img src="assets/imagenes/airtag.png" alt="Airtag" width="300" height="200">
+                <h3>Airtag</h3>
+                <p>Precio: $100</p>
+                <p>Stock: 50 unidades</p>
+                <a href="vista_producto.html?producto=Airtag&precio=100&stock=50"><button>Comprar</button></a>
             </div>
-
-            <!-- Call of Duty Black Ops II -->
-            <div class="juego">
-                <h3>Call of Duty Black Ops II</h3>
-                <p>Precio: $409.00</p>
-                <img src="assets/imagenes/COB2.jpeg" alt="Call of Duty Black Ops II" width="300" height="200">
-                <button type="button" class="comprar-btn">Comprar</button>
+            <div class="producto">
+                <img src="assets/imagenes/airpods4.jpg" alt="Airpods 4" width="300" height="200">
+                <h3>Airpods 4</h3>
+                <p>Precio: $200</p>
+                <p>Stock: 50 unidades</p>
+                <a href="vista_producto.html?producto=Airpods%204&precio=200&stock=50"><button>Comprar</button></a>
             </div>
-
-            <!-- Gears of War Ultimate -->
-            <div class="juego">
-                <h3>Gears of War Ultimate</h3>
-                <p>Precio: $500.00</p>
-                <img src="assets/imagenes/GOWU.jpeg" alt="Gears of War Ultimate" width="300" height="200">
-                <button type="button" class="comprar-btn">Comprar</button>
+            <div class="producto">
+                <img src="assets/imagenes/apple watch series10.jpeg" alt="Apple Watch Series 10" width="300" height="200">
+                <h3>Apple Watch Series 10</h3>
+                <p>Precio: $300</p>
+                <p>Stock: 50 unidades</p>
+                <a href="vista_producto.html?producto=Apple%20Watch%20Series%2010&precio=300&stock=50"><button>Comprar</button></a>
             </div>
-
-            <!-- LEFT 4 DEAD 2 -->
-            <div class="juego">
-                <h3>LEFT 4 DEAD 2</h3>
-                <p>Precio: $230.50</p>
-                <img src="assets/imagenes/LFD2.jpeg" alt="LEFT 4 DEAD 2" width="300" height="200">
-                <button type="button" class="comprar-btn">Comprar</button>
-            </div>
-
-            <!-- DEAD ISLAND -->
-            <div class="juego">
-                <h3>DEAD ISLAND</h3>
-                <p>Precio: $750.00</p>
-                <img src="assets/imagenes/DI2.jpg" alt="DEAD ISLAND" width="300" height="200">
-                <button type="button" class="comprar-btn">Comprar</button>
+            <div class="producto">
+                <img src="assets/imagenes/iphone 16 pro.jpeg" alt="Iphone 16 Pro" width="300" height="200">
+                <h3>Iphone 16 Pro</h3>
+                <p>Precio: $26000</p>
+                <p>Stock: 50 unidades</p>
+                <a href="vista_producto.html?producto=Iphone%2016%20Pro&precio=26000&stock=50"><button>Comprar</button></a>
             </div>
         </div>
     </section>
 
-    <!-- Script para manejar los botones de compra -->
-    <script>
-        const comprarButtons = document.querySelectorAll('.comprar-btn');
-
-        comprarButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                alert("Has añadido este juego a tu carrito");
-            });
-        });
-    </script>
-
     <!-- Formulario de contacto -->
-    <section id="Contacto">
+    <section id="contacto">
         <h2>Contacto</h2>
-        <form action="#" method="POST">
-            <label for="nombre">🙌Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required><br><br>
-            
-            <label for="correo">👀Correo electrónico:</label>
-            <input type="email" id="correo" name="correo" required><br><br>
-
-            <label for="comentarios">🤓Comentarios:</label><br>
-            <textarea id="comentarios" name="comentarios" rows="4" required></textarea><br><br>
-
-            <button type="submit">Enviar</button>
+        <form action="#" method="post">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Comentarios</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+            <br>
+            <input type="submit" value="Enviar">
         </form>
     </section>
-
-    <marquee behavior="scroll" direction="left" scrollamount="5">Naidelyn Vazquez Ortiz 3ºA</marquee>
 </body>
 </html>
+
